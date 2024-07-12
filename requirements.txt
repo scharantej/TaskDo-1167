@@ -1,0 +1,7 @@
+click
+Flask
+Flask-SQLAlchemy
+gunicorn
+MarkupSafe
+Werkzeug
+WTForms
