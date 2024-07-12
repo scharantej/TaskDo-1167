@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To Do List</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<h1>To Do List</h1>
+<ul class="list-group">
+{% for task in tasks %}
+<li class="list-group-item">
+{{ task.title }}
+<a href="{{ url_for('delete_task', id=task.id) }}"><span class="badge badge-danger">X</span></a>
+</li>
+{% endfor %}
+</ul>
+<form action="{{ url_for('add_task') }}" method="POST">
+<div class="form-group">
+<label for="title">Title:</label>
+<input type="text" class="form-control" name="title">
+</div>
+<div class="form-group">
+<label for="description">Description:</label>
+<textarea class="form-control" name="description"></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Add Task</button>
+</form>
+</div>
+</body>
+</html>
+
